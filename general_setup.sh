@@ -15,6 +15,6 @@ apt-get update
 apt-get install -y vim emacs
 apt-get install git -y --force-yes
 # portを解放
-apt-get install -y iptables-persistent
-iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp -m tcp --dport 3000 -j ACCEPT
+# apt-get install -y iptables-persistent
+# iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+# iptables -A INPUT -p tcp -m tcp --dport 3000 -j ACCEPT

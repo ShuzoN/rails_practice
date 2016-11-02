@@ -3,9 +3,7 @@ echo '---------------------------------------'
 echo rails_practice
 echo '---------------------------------------'
 home_path="/home/vagrant"
-git config --global url."https://".insteadOf git://
 cd $home_path
-$home_path/.rbenv/shims/bundle config git.allow_insecure true
 # アプリに必要なaptパッケージの追加
 # gcc4.9が必要
 sudo -E add-apt-repository -y ppa:ubuntu-toolchain-r/test
