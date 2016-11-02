@@ -2,6 +2,7 @@
 echo '---------------------------------------'
 echo rails_practice
 echo '---------------------------------------'
+source /vagrant/change_proxy.sh
 home_path="/home/vagrant"
 cd $home_path
 # アプリに必要なaptパッケージの追加
@@ -24,16 +25,17 @@ sudo -E update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
 sudo -E update-alternatives --set c++ /usr/bin/g++
 
 # sqlite3のインストール
-apt-get install sqlite3 sqlite-devel
+sudo -E apt-get install -y sqlite3 libsqlite3-dev nodejs nodejs-dev
 
 cd $home_path
-mkdir $home_path/rails
-cd $home_path/rails
-bundle init 
-echo "gem 'rails', '4.2.1'" >> $home_path/rails/Gemfile
-echo "gem 'therubyracer'" >> $home_path/rails/Gemfile
-echo "gem 'seed-fu'" >> $home_path/rails/Gemfile
-
+mkdir /home/vagrant/rails
+cd /home/vagrant/rails
+cp /vagrant/Gemfile cd $home_path/rails/.
 # アプリに必要なgem(rubyパッケージ)のインストール
-$home_path/.rbenv/shims/bundle install --path vendor/bundle --jobs=4
-$home_path/.rbenv/shims/bundle exec rails new rails_practice
+/home/vagrant/.rbenv/shims/bundle install --path vendor/bundle --jobs=4
+/home/vagrant/.rbenv/shims/bundle exec rails new -sB rails_practice
+cd /home/vagrant/rails/rails_practice
+cp /vagrant/rails_practice/Gemfile cd /home/vagrant/rails/rails_practice/.
+/home/vagrant/.rbenv/shims/bundle install
+/home/vagrant/.rbenv/shims/bundle update
+/home/vagrant/.rbenv/shims/bundle exec spring binstub --all
