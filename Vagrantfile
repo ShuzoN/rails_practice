@@ -12,5 +12,5 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provision :shell, :path => "general_setup.sh", privileged: true
   config.vm.provision :shell, :path => "rbenv.sh", privileged: false
-  config.vm.provision :shell, :path => "sqlite3.sh", privileged: false
+  config.vm.provision :shell, :path => "rails_practice.sh", privileged: false
 end
