@@ -32,10 +32,10 @@ mkdir /home/vagrant/rails
 cd /home/vagrant/rails
 cp /vagrant/Gemfile $home_path/rails/.
 # アプリに必要なgem(rubyパッケージ)のインストール
-/home/vagrant/.rbenv/shims/bundle install --path vendor/bundle --jobs=4
-/home/vagrant/.rbenv/shims/bundle exec rails new -sB rails_practice
+/home/vagrant/.rbenv/shims/bundler install --path vendor/bundle --jobs=4
+/home/vagrant/.rbenv/shims/bundler exec rails new -sB rails_practice
 cd /home/vagrant/rails/rails_practice
 cp /vagrant/rails_practice/Gemfile /home/vagrant/rails/rails_practice/.
-/home/vagrant/.rbenv/shims/bundle install
-/home/vagrant/.rbenv/shims/bundle update
-/home/vagrant/.rbenv/shims/bundle exec spring binstub --all
+/home/vagrant/.rbenv/shims/bundler install
+/home/vagrant/.rbenv/shims/bundler update
+/home/vagrant/.rbenv/shims/bundler exec spring binstub --all

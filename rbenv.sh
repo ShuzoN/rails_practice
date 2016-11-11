@@ -4,8 +4,8 @@ echo 'ruby env setup'
 echo '---------------------------------------'
 git config --global url."https://".insteadOf git://
 git init
-chown -R root .git/
-chown -R vagrant .git/
+sudo -E chown -R root .git/
+sudo -E chown -R vagrant .git/
 # rubyバージョン管理ソフト rbenvの導入
 home_path="/home/vagrant"
 source ${home_path}/change_proxy.sh
