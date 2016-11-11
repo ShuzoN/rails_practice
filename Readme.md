@@ -36,8 +36,9 @@ $ pwd
 $ ls
 ... Vagrantfile ...
 
-$ vagrant up
+$ vagrant up > log.txt
 # 30~40分くらい待つ
+# ログは./log.txtに残る
 # スリープになると厄介なので, 動画を流す等で対策
 ```
 
@@ -62,6 +63,7 @@ $ vagrant ssh
 #### サーバ起動(ゲストOS)
 
 ```
+# vagrant up時にrailsのプロジェクトを作成している
 $ cd ~/rails/rails_practice
 # hostから接続するためにbindが必須
 $ bundle exec rails server --bind=0.0.0.0
